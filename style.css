@@ -1,0 +1,259 @@
+:root {
+    --blue: #f51717;
+    --bg: #a7a7a7;
+    --card: #ffffff;
+    --text: #000000;
+    --muted: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    gap: 20px;
+}
+
+
+/* Smooth transitions for all sections */
+
+.container>* {
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Profile Section */
+
+.profile {
+    background: var(--card);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: var(--card);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--blue);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* About Section */
+
+.about {
+    background: var(--card);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #e9e9e9;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.btn {
+    margin-top: auto;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: var(--blue);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #0b76d1;
+    transform: translateY(-2px);
+}
+
+
+/* Projects Section */
+
+.projects {
+    background: var(--card);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #e9e9e9;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Contact Section */
+
+.contact {
+    background: var(--card);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact input,
+.contact textarea {
+    background: #e9e9e9;
+    color: var(--text);
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    box-shadow: 0 0 0 2px var(--blue);
+}
+
+.contact button {
+    background: var(--blue);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #0b76d1;
+    transform: translateY(-2px);
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile img {
+        margin-bottom: 8px;
+    }
+}
